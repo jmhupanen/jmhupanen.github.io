@@ -1,8 +1,17 @@
 import type { NextPage } from "next";
+import Head from "next/head"
+import About from "../components/About";
+import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
   return (
-    <div>Hi 👋, <br /> my name is Juho and this is my page.</div>
+    <div>
+      <Head>
+        <title>juho.page</title>
+      </Head>
+      <About />
+      <Footer />
+    </div>
   );
 }
 
