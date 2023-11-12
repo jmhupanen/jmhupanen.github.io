@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className="text-center">
       <div>
-        &copy; {currentYear} Juho Hupanen
+        &copy; {currentYear} Juho
       </div>
     </div>
   );
