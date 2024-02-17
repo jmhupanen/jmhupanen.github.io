@@ -1,6 +1,6 @@
 import React from "react";
 
-function Header() {
+const Header = () => {
   return (
     <header>
         <p>I am a header and I serve absolutely no purpose</p>

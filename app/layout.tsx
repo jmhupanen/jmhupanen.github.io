@@ -1,18 +1,22 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "../styles/globals.css";
-import Header from "./Header";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "juho.page",
+  description: "This page is Juho's property",
+};
 
 export default function RootLayout({
   children,
 }:  {
-  children: React.ReactNode   
+  children: React.ReactNode;
 }) {
   return (
-    <html>
-      <head></head>
-      <body>
-        <Header />
-        {children}
-      </body>
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
     </html>
-  )
-}
+  );
+};

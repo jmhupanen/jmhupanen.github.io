@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-function Footer() {
+const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <div className="text-center">
+    <div className='text-center'>
       <div>
         &copy; {currentYear} Juho
       </div>

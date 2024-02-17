@@ -1,9 +1,11 @@
-import React from "react";
+import About from './components/About';
+import Footer from './components/Footer';
 
-function Home() {
+export default function Home() {
   return (
-    <div>Hi 👋, <br /> my name is Juho and this is my page.</div>
+    <div>
+      <About />
+      <Footer />
+    </div>
   );
-}
-
-export default Home;
+};
