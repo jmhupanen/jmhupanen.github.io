@@ -3,4 +3,4 @@
 :HL["/tldr-screenshot.webp","image"]
 :HL["/instanalyze-screenshot.webp","image"]
 :HL["/ascii-screenshot.webp","image"]
-0:{"buildId":"PMQfNSss619hScgSwTgl9","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"9hR7YmkEsEmaKwV_c52gy","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
