@@ -18,6 +18,14 @@ const projects = [
     link: 'https://instanalyze.juho.page/',
     github: 'https://github.com/jmhupanen/instanalyze/',
   },
+    {
+    id: 3,
+    title: 'ASCII Art Generator',
+    description: 'An ASCII art generator with customization options that converts uploaded images into ASCII art.',
+    image: '/ascii-screenshot.webp',
+    link: 'https://juho.page/ascii-art-generator/',
+    github: 'https://github.com/jmhupanen/ascii-art-generator/',
+  }
 ];
 
 export default function Home() {
