@@ -5,8 +5,19 @@ import '../styles/globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'juho.page',
-  description: "This page is Juho's property",
+  title: 'Juho - Software Engineer',
+  description:
+    'Portfolio of Juho. Software Engineer building tools and applications with modern technologies.',
+  openGraph: {
+    title: 'Juho - Software Engineer',
+    description:
+      'Portfolio of Juho. Software Engineer building tools and applications with modern technologies.',
+    url: 'https://juho.page',
+    siteName: 'juho.page',
+    locale: 'en_US',
+    type: 'website',
+  },
+  metadataBase: new URL('https://juho.page'),
 };
 
 export default function RootLayout({
@@ -16,7 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} min-h-screen flex flex-col`}>
+        {children}
+      </body>
     </html>
   );
 }
