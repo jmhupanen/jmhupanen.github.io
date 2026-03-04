@@ -137,48 +137,48 @@ export default function ParticleNetwork() {
 
       ctx.clearRect(0, 0, w, h);
 
-      if (!prefersReducedMotion) {
-        for (const p of particles) {
-          p.wanderAngle += (Math.random() - 0.5) * WANDER_RATE;
-          let ax = Math.cos(p.wanderAngle) * WANDER_STRENGTH;
-          let ay = Math.sin(p.wanderAngle) * WANDER_STRENGTH;
+      const motionMultiplier = prefersReducedMotion ? 0.15 : 1.0;
 
-          // Compute parallax Y position for interactions
-          const py = p.y - scrollOffset;
+      for (const p of particles) {
+        p.wanderAngle += (Math.random() - 0.5) * WANDER_RATE * motionMultiplier;
+        let ax = Math.cos(p.wanderAngle) * WANDER_STRENGTH * motionMultiplier;
+        let ay = Math.sin(p.wanderAngle) * WANDER_STRENGTH * motionMultiplier;
 
-          if (active) {
-            const cdx = p.x - mx;
-            const cdy = py - my;
-            const cdistSq = cdx * cdx + cdy * cdy;
-            const cursorRadSq = CURSOR_RADIUS * CURSOR_RADIUS;
+        // Compute parallax Y position for interactions
+        const py = p.y - scrollOffset;
 
-            if (cdistSq > 0 && cdistSq < cursorRadSq) {
-              const cdist = Math.sqrt(cdistSq);
-              const t = 1 - cdist / CURSOR_RADIUS;
-              ax += (cdx / cdist) * t * t * CURSOR_REPEL_WEIGHT;
-              ay += (cdy / cdist) * t * t * CURSOR_REPEL_WEIGHT;
-            }
+        if (active) {
+          const cdx = p.x - mx;
+          const cdy = py - my;
+          const cdistSq = cdx * cdx + cdy * cdy;
+          const cursorRadSq = CURSOR_RADIUS * CURSOR_RADIUS;
+
+          if (cdistSq > 0 && cdistSq < cursorRadSq) {
+            const cdist = Math.sqrt(cdistSq);
+            const t = 1 - cdist / CURSOR_RADIUS;
+            ax += (cdx / cdist) * t * t * CURSOR_REPEL_WEIGHT * motionMultiplier;
+            ay += (cdy / cdist) * t * t * CURSOR_REPEL_WEIGHT * motionMultiplier;
           }
-
-          p.vx += ax;
-          p.vy += ay;
-          p.vx *= 0.96;
-          p.vy *= 0.96;
-
-          const limited = limitVec(p.vx, p.vy, MAX_SPEED);
-          p.vx = limited.vx;
-          p.vy = limited.vy;
-
-          p.x += p.vx;
-          p.y += p.vy;
-
-          // Wrap around edges + padding to allow smooth parallax scrolling without pop-in
-          if (p.x < -50) p.x += w + 100;
-          else if (p.x > w + 50) p.x -= w + 100;
-
-          if (p.y - scrollOffset < -50) p.y += h + 100;
-          else if (p.y - scrollOffset > h + 50) p.y -= h + 100;
         }
+
+        p.vx += ax;
+        p.vy += ay;
+        p.vx *= 0.96;
+        p.vy *= 0.96;
+
+        const limited = limitVec(p.vx, p.vy, MAX_SPEED * motionMultiplier);
+        p.vx = limited.vx;
+        p.vy = limited.vy;
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Wrap around edges + padding to allow smooth parallax scrolling without pop-in
+        if (p.x < -50) p.x += w + 100;
+        else if (p.x > w + 50) p.x -= w + 100;
+
+        if (p.y - scrollOffset < -50) p.y += h + 100;
+        else if (p.y - scrollOffset > h + 50) p.y -= h + 100;
       }
 
       const connectionRadiusSq = CONNECTION_RADIUS * CONNECTION_RADIUS;
