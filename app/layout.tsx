@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import '../styles/globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-terminal',
+});
 
 export const metadata: Metadata = {
   title: 'Juho - Software Engineer',
@@ -27,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen flex flex-col`}>
+      <body className={`${inter.className} ${jetbrainsMono.variable} min-h-screen flex flex-col`}>
         {children}
       </body>
     </html>

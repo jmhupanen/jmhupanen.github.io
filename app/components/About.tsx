@@ -1,8 +1,10 @@
+import BlinkingCursor from './BlinkingCursor';
+
 const About = () => {
   return (
     <section className="w-full max-w-3xl mx-auto px-6 pt-24 pb-16 text-center animate-fade-in-up">
-      <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-white mb-4">
-        Juho
+      <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: 'var(--font-terminal)' }}>
+        juho<BlinkingCursor />
       </h1>
       <p className="text-xl sm:text-2xl text-blue-400 font-medium mb-6">
         Software Engineer

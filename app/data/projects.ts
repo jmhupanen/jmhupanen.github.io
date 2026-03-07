@@ -31,4 +31,14 @@ export const projects: Project[] = [
         github: 'https://github.com/jmhupanen/ascii-art-generator/',
         tags: [],
     },
+    {
+        id: 4,
+        title: 'You',
+        description:
+            'Everything websites know about you, and more.',
+        image: '/you-screenshot.webp',
+        link: 'https://juho.page/you/',
+        github: 'https://github.com/jmhupanen/you/',
+        tags: [],
+    },
 ];
