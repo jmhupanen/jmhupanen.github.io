@@ -24,11 +24,12 @@ const Projects = () => {
                                     width={600}
                                     height={400}
                                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                                    priority={index === 0}
                                 />
                             </div>
                         )}
                         <div className="p-6 flex-1 flex flex-col">
-                            <h3 className="text-xl font-semibold text-blue-400 mb-2">
+                            <h3 className="text-xl font-semibold text-blue-300 mb-2">
                                 {project.title}
                             </h3>
                             <p className="text-gray-300 text-sm leading-relaxed mb-4 flex-1">
@@ -54,7 +55,7 @@ const Projects = () => {
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1.5 text-sm text-blue-400 hover:text-blue-300 transition-colors duration-200 focus:ring-2 focus:ring-blue-400 focus:outline-none rounded-sm"
+                                        className="inline-flex items-center gap-1.5 text-sm text-blue-300 hover:text-blue-200 transition-colors duration-200 focus:ring-2 focus:ring-blue-300 focus:outline-none rounded-sm"
                                     >
                                         <ExternalLinkIcon />
                                         Live Demo
@@ -65,7 +66,7 @@ const Projects = () => {
                                         href={project.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1.5 text-sm text-blue-400 hover:text-blue-300 transition-colors duration-200 focus:ring-2 focus:ring-blue-400 focus:outline-none rounded-sm"
+                                        className="inline-flex items-center gap-1.5 text-sm text-blue-300 hover:text-blue-200 transition-colors duration-200 focus:ring-2 focus:ring-blue-300 focus:outline-none rounded-sm"
                                     >
                                         <GitHubIcon />
                                         Source
